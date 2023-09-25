@@ -8,7 +8,7 @@ const initialState = {
 const counter = createSlice({
     name: 'counter',
     initialState,
-    reducer: {
+    reducers: {
         increment(state, _) {
             state.counter++;
         },
@@ -25,10 +25,9 @@ const counter = createSlice({
 })
 
 const store = configureStore({
-    //dla pojedynczego
-    reducer: counter.reducers
-    //dla wielu, tutaj można wymienić do bólu
-    //reducer: { counter: counter.reducer }
-})
+    reducer: counter.reducer
+});
+
+export const counterActions = counter.actions;
 
 export default store;
