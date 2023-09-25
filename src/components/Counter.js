@@ -6,14 +6,11 @@ import { ACTION_TYPES } from '../store';
 const Counter = () => {
   const counter = useSelector(state => state.counter);
   const showCounter = useSelector(state => state.showCounter)
-
   const dispatch = useDispatch();
 
-  const incrementHandler = () => dispatch({ type: ACTION_TYPES.increment })
-  const decrementHandler = () => dispatch({ type: ACTION_TYPES.decrement })
-  const incrementByFiveHandler = () => {
-    dispatch({ type: ACTION_TYPES.incrementByValue, payload: { value: 5 } })
-  }
+  const incrementHandler = () => dispatch({ type: ACTION_TYPES.increment });
+  const decrementHandler = () => dispatch({ type: ACTION_TYPES.decrement });
+  const incrementByFiveHandler = () => dispatch({ type: ACTION_TYPES.incrementByValue, payload: { value: 5 } });
 
   const toggleCounterHandler = () => dispatch({ type: ACTION_TYPES.toggleCounterState });
 
